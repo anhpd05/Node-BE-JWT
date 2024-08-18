@@ -1,6 +1,7 @@
 const {
   createUserService,
   loginService,
+  getAllUser,
 } = require("../handleDataBase/userService");
 
 const registerAPI = async (req, res) => {
@@ -21,7 +22,15 @@ const loginAPI = async (req, res) => {
   });
 };
 
+const getAllUserAPI = async (req, res) => {
+  const data = await getAllUser();
+  return res.status(200).json({
+    data: data,
+  });
+};
+
 module.exports = {
   registerAPI,
   loginAPI,
+  getAllUserAPI,
 };

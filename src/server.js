@@ -21,7 +21,7 @@ configViewEngine(app);
 
 //khai báo route
 app.use("/v1/api/", routerAPI);
-app.use("/", getHomepage);
+// app.use("/", getHomepage);
 
 (async () => {
   try {
