@@ -5,8 +5,9 @@ const {
   loginAPI,
   getAllUserAPI,
 } = require("../controllers/user.controller");
-
-routerAPI.get("", (req, res) => {
+const delay = require("../middleware/delay/delay");
+routerAPI.all("*", delay);
+routerAPI.get("", delay, (req, res) => {
   return res.json("Hello world with abc");
 });
 
