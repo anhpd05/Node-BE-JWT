@@ -1,4 +1,5 @@
 const delay = (req, res, next) => {
+  console.log(req.url);
   if (req.url === "/" || req.url === "/login" || req.url === "/register")
     return next();
   setTimeout(() => {
